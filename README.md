@@ -24,7 +24,7 @@ This repository contains the source code of an AI-agent application designed to 
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/yourusername/ai-agent-rag.git
+   git clone https://github.com/rathinamtrainers/ai-agent-rag.git
    cd ai-agent-rag
    ```
 
