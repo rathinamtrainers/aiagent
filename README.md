@@ -1,6 +1,3 @@
-Here is a possible `README.md` for your GitHub repository:
-
-```md
 # AI-Agent Application for Retrieval-Augmented Generation (RAG)
 
 This repository contains the source code of an AI-agent application designed to support Retrieval-Augmented Generation (RAG) with extensive flexibility and extensibility. The system is capable of interacting with various data source formats, vector databases, and Large Language Models (LLMs). Additionally, it offers API and chat-based interfaces, and is customizable for new use cases.
@@ -89,6 +86,3 @@ This project is licensed under the MIT License.
 ## Contact
 
 For any inquiries or support, feel free to contact the repository maintainers at [rajan@rathinamtrainers.com].
-```
-
-This `README.md` covers the purpose of the repository, key features, installation, usage instructions, and information on how to extend the system.
