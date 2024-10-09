@@ -86,4 +86,3 @@ This project is licensed under the MIT License.
 ## Contact
 
 For any inquiries or support, feel free to contact the repository maintainers at [rajan@rathinamtrainers.com].
-
