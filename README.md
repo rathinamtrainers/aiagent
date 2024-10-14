@@ -47,14 +47,23 @@ This repository contains the source code of an AI-agent application designed to 
 
 You can interact with the AI-agent through a REST API. Here is an example request:
 
+## Usage
+
+### API
+
+You can interact with the AI-agent through a REST API. Here is an example request:
+
 ```bash
-curl -X POST http://localhost:5000/api/query \
--H "Content-Type: application/json" \
--d '{
-  "question": "What is RAG?",
-  "data_source": "path/to/your/dataset.pdf"
+curl -X 'POST' \
+  'http://localhost:8000/get_prompt_response' \
+  -H 'accept: application/json' \
+  -H 'Content-Type: application/json' \
+  -d '{
+  "prompt": "hi",
+  "model": "gemini-1.5-pro-001",
+  "vdb": "Pinecone"
 }'
-```
+
 
 ### Chat Interface
 
