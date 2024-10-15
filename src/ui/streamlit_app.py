@@ -1,7 +1,8 @@
 import streamlit as st
 import requests
+from components.layout import create_input_columns, display_chat_messages
 
-API_URL = "http://localhost:8000/get_prompt_response"
+API_URL = "http://127.0.0.1:8888/get_prompt_response"
 
 def streamlit_example():
     st.title("MY CHATBOT")
@@ -9,11 +10,9 @@ def streamlit_example():
     if "messages" not in st.session_state:
         st.session_state["messages"] = []
 
-    for message in st.session_state["messages"]:
-        with st.chat_message(message["role"]):
-            st.markdown(message["content"])
+    display_chat_messages(st.session_state["messages"])
 
-    cols = st.columns([5, 2])
+    cols = create_input_columns()
 
     with cols[0]:
         prompt = st.chat_input("Ask a question:")
@@ -21,9 +20,9 @@ def streamlit_example():
     with cols[1]:
         model = st.selectbox(
             "Choose Model",
-            ["gemini-1.5-pro-001","gemini-1.5-flash-001"],
+            ["gemini-1.5-pro-001", "gemini-1.5-flash-001"],
             index=1,  # Default selection (optional)
-            format_func=lambda x: x.lower()  # Custom format     (optional)
+            format_func=lambda x: x.lower()  # Custom format (optional)
         )
         vdb = st.selectbox(
             "Choose Vector Database",
