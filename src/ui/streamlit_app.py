@@ -1,5 +1,12 @@
 import streamlit as st
+import os
+import streamlit as st
 import requests
+import requests
+from pyprojroot.here import here
+import sys
+sys.path.append(str(here()))
+
 from components.layout import create_input_columns, display_chat_messages
 from src.webapp.models.prompt_model import get_vertexai_response  # Absolute import
 
@@ -55,4 +62,6 @@ def streamlit():
 # streamlit()
 
 if __name__ == "__main__":
-    streamlit()  
+    streamlit()
+
+

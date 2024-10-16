@@ -2,7 +2,12 @@ from fastapi import FastAPI
 from pydantic import BaseModel
 from fastapi import FastAPI
 from pydantic import BaseModel
+from pyprojroot.here import here
+import sys
+sys.path.append(str(here()))
+
 from models.prompt_model import get_vertexai_response  # Updated import
+from src.webapp.models.prompt_model import get_vertexai_response  # Updated import
 
 app = FastAPI()
 
@@ -41,8 +46,6 @@ async def get_prompt_response(prompt_request: PromptRequest):
     print()
     return {"response": response}
     print()
-
-
 
 if __name__ == "__main__":
     import uvicorn

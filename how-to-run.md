@@ -1,5 +1,4 @@
 # Running Webapp
----
 ```bash
 python ./src/webapp/main.py
 ```
@@ -28,9 +27,7 @@ curl -X 'POST' \
 }'
 ```
 
-
 # Running streamlit'
----
 ```shell
 streamlit run ./src/ui/streamlit_app.py
 ```
