@@ -1,8 +1,4 @@
 import streamlit as st
-import os
-import streamlit as st
-import requests
-import requests
 from pyprojroot.here import here
 import sys
 sys.path.append(str(here()))
