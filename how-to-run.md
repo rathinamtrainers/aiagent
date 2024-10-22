@@ -1,3 +1,10 @@
+# Environment setup - Export the environment in .bashrc
+```bash
+export GEMINI_API_KEY='xxxx'
+export PROJECT_ID="xxxxx"
+export LOCATION_ID="xxx"
+```
+
 # Running Webapp
 ```bash
 python ./src/webapp/main.py
@@ -5,7 +12,7 @@ python ./src/webapp/main.py
 
 ### Check the webapp running status
 ```shell
-sudo netstat -alnp | grep 8000
+sudo netstat -alnp | grep 8888
 ```
 
 ### Webapp HTTP Interface

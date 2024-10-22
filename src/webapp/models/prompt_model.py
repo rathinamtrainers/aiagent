@@ -1,7 +1,11 @@
+import os
 import vertexai
-from vertexai.generative_models import GenerativeModel
+from vertexai.generative_models import GenerativeModel, Part
 
-vertexai.init(project='engaged-reducer-432905-c5', location='asia-east1')
+PROJECT_ID=os.environ.get('PROJECT_ID')
+LOCATION_ID=os.environ.get('LOCATION')
+
+vertexai.init(project=PROJECT_ID, location=LOCATION_ID)
 
 models = {
     "gemini-1.5-pro-001": "gemini-1.5-pro-001",
