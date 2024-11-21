@@ -1,0 +1,137 @@
+@startuml
+actor User
+
+component UI
+
+User --> [UI] : "Interacts with UI"
+package "Web Application" {    
+    component [GET_API] as GA
+    component [PUT_API] as PA
+    
+    [UI] <--> [GA] : "Invoke GET API"
+    [UI] <--> [PA] : "Invoke PUT API"
+}
+
+[GA] <--> [LLM] : "Fetch Data (GET)"
+[PA] <--> [LLM] : "Update Data (PUT)"
+@enduml
+
+@startuml
+package "Some Group" {
+  GET - [First Component]
+  PUT - [First Component]
+}
+@enduml
+
+
+
+@startuml
+
+package "Some Group" {
+  HTTP - [First Component]
+  [Another Component]
+}
+
+node "Other Groups" {
+  FTP - [Second Component]
+  [First Component] --> FTP
+}
+
+cloud {
+  [Example 1]
+}
+
+
+database "MySql" {
+  folder "This is my folder" {
+    [Folder 3]
+  }
+  frame "Foo" {
+    [Frame 4]
+  }
+}
+
+
+[Another Component] --> [Example 1]
+[Example 1] --> [Folder 3]
+[Folder 3] --> [Frame 4]
+
+@enduml
+
+@startuml
+' Define components
+package "Web Application" {
+    [Streamlit UI] <<UI>>
+    [FastAPI Backend] <<Service>>
+    [Database] <<Data Storage>>
+}
+
+' User interaction with the UI
+actor User
+User --> [Streamlit UI] : "Interacts via web page"
+
+' Interactions between components
+[Streamlit UI] --> [FastAPI Backend] : "Invoke GET API"
+[Streamlit UI] --> [FastAPI Backend] : "Invoke POST API"
+[Streamlit UI] --> [FastAPI Backend] : "Invoke PUT API"
+
+' Backend accessing the database
+[FastAPI Backend] --> [Database] : "Fetch/Update data"
+
+@enduml
+
+
+@startuml
+[Component] -left-> left
+[Component] -right-> right
+[Component] -up-> up
+[Component] -down-> up
+@enduml
+
+
+@startuml
+actor User
+
+package "Web Application" {
+    [Streamlit UI] <<UI>>
+    [FastAPI Backend] <<Service>>
+
+    [Streamlit UI] --> [FastAPI Backend] : "Invoke GET API"
+    [Streamlit UI] --> [FastAPI Backend] : "Invoke PUT API"
+}
+
+[FastAPI Backend] --> [Database] : "Fetch/Update Data"
+[Database] <<Data Storage>>
+
+User --> [Streamlit UI] : "Interacts with UI"
+@enduml
+
+@startuml
+actor User
+
+package "Web Application" {
+    [Streamlit UI] <<UI>>
+    
+    [FastAPI Service 1] <<Service>>
+    [FastAPI Service 2] <<Service>>
+    
+    [Streamlit UI] --> [FastAPI Service 1] : "Invoke GET API"
+    [Streamlit UI] --> [FastAPI Service 2] : "Invoke PUT API"
+}
+
+[FastAPI Service 1] --> [Database] : "Fetch Data (GET)"
+[FastAPI Service 2] --> [Database] : "Update Data (PUT)"
+[Database] <<Data Storage>>
+
+User --> [Streamlit UI] : "Interacts with UI"
+@enduml
+
+@startuml
+actor User
+User -> Streamlit : Sends Request
+Streamlit -> FastAPI : Forwards Request
+FastAPI -> LLM : Sends Request for Processing
+LLM --> FastAPI : Returns Processed Data
+FastAPI --> Streamlit : Sends Processed Data
+Streamlit --> User : Displays Output
+@enduml
